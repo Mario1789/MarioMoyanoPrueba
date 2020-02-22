@@ -1,0 +1,28 @@
+
+Se han creado los scripts de la carpeta "Karting > Scripts > MainMenu" para:
+1. Los botones de la escena MainMenu ("MainMenuButtons")
+2. Mostrar en la escena MainMenu el tiempo de mejor vuelta del jugador (obviamente solo aparecerá después de haber jugado una partida) ("MainMenuRecord")
+3. El Menú que aparece al acabar las tres vueltas ("GameOverMenu")
+
+También se ha creado el Script "InteractiveElement" de la carpeta "Inputs", para los controles Android. 
+Controles que están desactivados a propósito para poder manejar con el teclado del ordenador dentro del entorno de Unity.
+
+Se han modificado los siguientes scripts:
+1. "TrackManager": Líneas 14 y 15. Línea 90. Líneas 190-195.
+2. "KeyboardInput": Líneas 12-17. Líneas 55-64 (Los cambios serían para funcionar para Android. Están comentados para manejar dentro del entorno de Unity con el teclado del ordenador).
+
+Obviamente la escena "MainMenu" se ha creado desde cero. Con respecto a la escena "SampleScene", se ha modificado de la siguiente manera:
+Se han creado los diferentes Canvas: 
+1. "GameOverCanvas" (Menú que aparece tras completar las tres vueltas)
+2. "NewRecordCanvas" (Texto que aparece al superar el récord actual de mejor vuelta)
+3. "AndroidControlsCanvas" (Canvas que contiene los controladores para Android)
+
+En la escena "SampleScene" también se ha modificado la "MainCamera". Al cambiar a Android el Cinemachine causaba problemas así que se ha colocado dentro de "Kart".
+
+En ambas escenas, los Canvas se han modificado en su Script "Canvas Scaler" > "UI Scale Mode" > "Scale With Screen Size", y en "Screen Match Mode" > "Match Width Or Height".
+
+El .apk es "jugable" solo con las mecánicas de: 
+ - Acelerar (Cualquiera de los dos botones verdes)
+ - Frenar/dar marcha atrás (Cualquiera de los dos botones rojos) 
+ - Girar (Al pulsar sobre la mitad izquierda de la pantalla el jugador girará hacia la izquierda y viceversa). 
+El derrape y el menú de pausa que venían en el proyecto no están implementados, así como el botón de reposicionamiento asociado a la "R" del teclado.
